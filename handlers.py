@@ -50,7 +50,7 @@ def convert(update: Update, context: CallbackContext):
 
     resp = ''
     for x in response.json():
-        resp += f"<b>{x['currency']}</b>: {x['value']}\n"
+        resp += f"<b>{x['currency']}</b>: {round(x['value'], 2)}\n"
 
     update.message.reply_html(
         text=resp
